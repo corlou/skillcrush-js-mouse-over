@@ -1,15 +1,15 @@
 console.log("Hello Wolrd");
 
-var canvas = document.getElementById("canvas");
-var c = canvas.getContext("2d");
-var tx = window.innerWidth;
-var ty = window.innerHeight;
+const canvas = document.getElementById("canvas");
+const c = canvas.getContext("2d");
+let tx = window.innerWidth;
+let ty = window.innerHeight;
 canvas.width = tx;
 canvas.height = ty;
 
 
-var mousex = 0;
-var mousey = 0;
+let mousex = 0;
+let mousey = 0;
 
 addEventListener("mousemove", function () {
     mousex = event.clientX;
@@ -17,7 +17,7 @@ addEventListener("mousemove", function () {
 
 });
 
-var grav = 0.99;
+let grav = 0.99;
 c.strokeWidth = 5;
 function randomColor() {
     return (
@@ -50,8 +50,8 @@ function Ball() {
     };
 }
 
-var bal = [];
-for (var i = 0; i < 50; i++) {
+let bal = [];
+for (let i = 0; i < 50; i++) {
     bal.push(new Ball());
 }
 
@@ -64,7 +64,7 @@ function animate() {
     }
     requestAnimationFrame(animate);
     c.clearRect(0, 0, tx, ty);
-    for (var i = 0; i < bal.length; i++) {
+    for (let i = 0; i < bal.length; i++) {
         bal[i].update();
         bal[i].y += bal[i].dy;
         bal[i].x += bal[i].dx;
